@@ -5,9 +5,8 @@ import { Loader } from "../../components";
 import { useGlobalContext } from "../../context/GlobalProvider";
 
 const AuthLayout = () => {
-  const { loading, isLogged } = useGlobalContext();
+ const  loading = false;
 
-  if (!loading && isLogged) return <Redirect href="/home" />;
 
   return (
     <>
@@ -18,12 +17,7 @@ const AuthLayout = () => {
             headerShown: false,
           }}
         />
-        <Stack.Screen
-          name="sign-up"
-          options={{
-            headerShown: false,
-          }}
-        />
+   
       </Stack>
 
       <Loader isLoading={loading} />

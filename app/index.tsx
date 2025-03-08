@@ -1,6 +1,7 @@
-import { View, Text, ImageBackground, TouchableOpacity, StyleSheet, Dimensions } from "react-native";
+import { View, Text, ImageBackground, TouchableOpacity, Dimensions } from "react-native";
 import Swiper from "react-native-swiper";
-import LinearGradient from "react-native-linear-gradient";
+import { useNavigation } from "@react-navigation/native";
+import { router } from "expo-router";
 
 const { width, height } = Dimensions.get("window");
 
@@ -22,72 +23,34 @@ const slides = [
   },
 ];
 
-const OnboardingScreen = ({ navigation }:any) => {
+const OnboardingScreen = () => {
+  const navigation = useNavigation(); // Internal navigation handling
+
   return (
-    <Swiper loop={false} dotStyle={styles.dot} activeDotStyle={styles.activeDot}>
+    <Swiper
+      loop={true}
+      
+     
+    >
       {slides.map((slide) => (
-        <ImageBackground key={slide.id} source={slide.image} style={styles.background}>
-          <LinearGradient colors={["rgba(0,0,0,0.5)", "transparent"]} style={styles.overlay} />
-          <Text style={styles.text}>{slide.text}</Text>
-          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Home")}>
-            <Text style={styles.buttonText}>Continue</Text>
+        <ImageBackground key={slide.id} source={slide.image} style={{ flex: 1, width: "100%", height: "100%", justifyContent: "center", alignItems: "center" }}>
+          {/* Overlay effect replacing LinearGradient */}
+          <View style={{ position: "absolute", top: 0, left: 0, right: 0, height: "100%", backgroundColor: "rgba(0, 0, 0, 0.8)" }} />
+
+          <Text style={{ fontSize: 22, fontWeight: "bold", color: "#fff", textAlign: "center", position: "absolute", top: height * 0.3, paddingHorizontal: 20 }}>
+            {slide.text}
+          </Text>
+
+          <TouchableOpacity 
+            style={{ position: "absolute", bottom: 50, backgroundColor: "#ff6347", paddingVertical: 12, paddingHorizontal: 40, borderRadius: 25 }} 
+            onPress={() => router.push("/(auth)/sign-in")}
+          >
+            <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold" }}>Begin Your Energy Audit</Text>
           </TouchableOpacity>
         </ImageBackground>
       ))}
     </Swiper>
   );
 };
-
-const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    width,
-    height,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  overlay: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    height: height * 0.5,
-  },
-  text: {
-    fontSize: 22,
-    fontWeight: "bold",
-    color: "#fff",
-    textAlign: "center",
-    position: "absolute",
-    top: height * 0.2,
-    paddingHorizontal: 20,
-  },
-  button: {
-    position: "absolute",
-    bottom: 50,
-    backgroundColor: "#ff6347",
-    paddingVertical: 12,
-    paddingHorizontal: 40,
-    borderRadius: 25,
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 18,
-    fontWeight: "bold",
-  },
-  dot: {
-    backgroundColor: "rgba(255,255,255,0.3)",
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    margin: 5,
-  },
-  activeDot: {
-    backgroundColor: "#ff6347",
-    width: 12,
-    height: 12,
-    borderRadius: 6,
-  },
-});
 
 export default OnboardingScreen;

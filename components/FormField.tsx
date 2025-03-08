@@ -1,30 +1,45 @@
-import { router } from "expo-router";
-import { View, Text, Image } from "react-native";
+import { useState } from "react";
+import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 
-import { images } from "../constants";
-import CustomButton from "./CustomButton";
+import icons from "../constants/icons";
 
-const EmptyState = ({ title, subtitle }:any) => {
+const FormField = ({
+  title,
+  value,
+  placeholder,
+  handleChangeText,
+  otherStyles,
+  ...props
+}:any) => {
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
-    <View className="flex justify-center items-center px-4">
-      <Image
-        source={images.empty}
-        resizeMode="contain"
-        className="w-[270px] h-[216px]"
-      />
+    <View className={`space-y-2 ${otherStyles}`}>
+      <Text className="text-base text-gray-100 font-pmedium">{title}</Text>
 
-      <Text className="text-sm font-pmedium text-gray-100">{title}</Text>
-      <Text className="text-xl text-center font-psemibold text-white mt-2">
-        {subtitle}
-      </Text>
+      <View className="w-full h-16 px-4 bg-black-100 rounded-2xl border-2 border-black-200 focus:border-secondary flex flex-row items-center">
+        <TextInput
+          className="flex-1 text-white font-psemibold text-base"
+          value={value}
+          placeholder={placeholder}
+          placeholderTextColor="#7B7B8B"
+          onChangeText={handleChangeText}
+          secureTextEntry={title === "Password" && !showPassword}
+          {...props}
+        />
 
-      <CustomButton
-        title="Back to Explore"
-        handlePress={() => router.push("/home")}
-        containerStyles="w-full my-5"
-      />
+        {title === "Password" && (
+          <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+            <Image
+              source={!showPassword ? icons.eye : icons.eyeHide}
+              className="w-6 h-6"
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
+        )}
+      </View>
     </View>
   );
 };
 
-export default EmptyState;
+export default FormField;
