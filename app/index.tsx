@@ -38,7 +38,7 @@ const OnboardingScreen = () => {
       renderItem={({ item }) => (
         <ImageBackground key={item.id} source={item.image} style={{ width, height, justifyContent: "center", alignItems: "center" }}>
           {/* Overlay effect replacing LinearGradient */}
-          <View style={{ position: "absolute", top: 0, left: 0, right: 0, height: "100%", backgroundColor: "rgba(0, 0, 0, 0.8)" }} />
+          <View style={{ position: "absolute", top: 0, left: 0, right: 0, height: "100%", backgroundColor: "rgba(0, 0, 0, 0.5)" }} />
 
           <Text style={{ fontSize: 22, fontWeight: "bold", color: "#fff", textAlign: "center", position: "absolute", top: height * 0.3, paddingHorizontal: 20 }}>
             {item.text}
