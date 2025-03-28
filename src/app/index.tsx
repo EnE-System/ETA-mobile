@@ -14,14 +14,14 @@ const { width, height } = Dimensions.get("window");
 const slides = [
   {
     id: "1",
-    image: require("../assets/images/app/image1.png"),
+    image: require("../../assets/images/app/image1.png"),
     text: "Optimize Your Energy, Minimize Your Costs",
     description:
       "Simplify your path to energy savings. Our tool provides instant, actionable insights to reduce energy consumption and lower utility bills",
   },
   {
     id: "2",
-    image: require("../assets/images/app/image2.png"),
+    image: require("../../assets/images/app/image2.png"),
     text: "Your Energy Efficiency Journey in 3 Simple Steps",
     description: `1.Input your space details and current energy usage.
   2.Our AI analyzes your data and identifies efficiency opportunities.
@@ -29,7 +29,7 @@ const slides = [
   },
   {
     id: "3",
-    image: require("../assets/images/app/image3.png"),
+    image: require("../../assets/images/app/image3.png"),
     text: "Ready to Transform Your Energy Efficiency?",
     description:
       "Start your free audit and take control of your energy consumption",

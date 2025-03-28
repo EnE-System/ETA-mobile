@@ -6,10 +6,10 @@ const CustomButton = ({
   containerStyles,
   textStyles,
   isLoading,
-}:any) => {
+}: any) => {
   return (
     <TouchableOpacity
-    style={{ backgroundColor:"#A5A328" }} 
+      style={{ backgroundColor: "#A5A328" }}
       onPress={handlePress}
       activeOpacity={0.7}
       className={` rounded-3xl min-h-[50px] flex flex-row justify-center items-center ${containerStyles} ${
@@ -17,7 +17,7 @@ const CustomButton = ({
       }`}
       disabled={isLoading}
     >
-      <Text className={`text-primary font-psemibold text-lg ${textStyles}`}>
+      <Text className={`text-primary font-semibold text-lg ${textStyles}`}>
         {title}
       </Text>
 
