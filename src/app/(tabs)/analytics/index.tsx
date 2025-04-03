@@ -12,7 +12,7 @@ import { useRouter } from "expo-router";
 const Analytics = () => {
   const router = useRouter();
   const handleNavigation = () => {
-    router.push("/(tabs)/(analytics)/analytics-questions");
+    router.push("/(tabs)/analytics/analytics-questions");
   };
   return (
     <ScreenWrapper>

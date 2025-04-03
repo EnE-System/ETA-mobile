@@ -3,6 +3,7 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import React from "react";
 import { FontAwesome6, MaterialCommunityIcons } from "@expo/vector-icons";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import Entypo from "@expo/vector-icons/Entypo";
 interface AuthQuickSlider {
   id: string;
   status: string;
@@ -17,7 +18,7 @@ const AuditQuickActions = () => {
     {
       id: "1",
       status: "New Audits",
-      icon: "tools",
+      icon: "newspaper-o",
       color: "#34C759",
     },
     {

@@ -28,7 +28,7 @@ const TabsLayout = () => {
         }}
       />
       <Tabs.Screen
-        name="analytics/index"
+        name="analytics"
         options={{
           title: "Analytics",
           tabBarIcon: ({ color }) => (
