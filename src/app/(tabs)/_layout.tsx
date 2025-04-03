@@ -23,24 +23,23 @@ const TabsLayout = () => {
         options={{
           title: "Data Entry",
           tabBarIcon: ({ color }) => (
-            <FontAwesome name="balance-scale" size={24} color="black" />
+            <FontAwesome name="balance-scale" size={24} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="Analytics"
+        name="analytics/index"
         options={{
           title: "Analytics",
           tabBarIcon: ({ color }) => (
-            <AntDesign name="linechart" size={24} color="black" />
+            <AntDesign name="linechart" size={24} color={color} />
           ),
         }}
       />
-
       <Tabs.Screen
         name="Settings"
         options={{
-          title: "Home",
+          title: "Settings",
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="cog" color={color} />
           ),

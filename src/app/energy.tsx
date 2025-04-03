@@ -5,6 +5,7 @@ import {
   FlatList,
   Dimensions,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import { Play, ChevronLeft } from "lucide-react-native"; // Example icons
 import slider4 from "../../assets/images/app/slider4.png";
@@ -65,40 +66,42 @@ const EnergySlider = () => {
   const flatListRef = useRef<FlatList>(null);
   const router = useRouter();
   return (
-    <View className="flex-1">
-      <FlatList
-        ref={flatListRef}
-        data={data}
-        horizontal={true}
-        showsHorizontalScrollIndicator={false}
-        // onScroll={handleScroll}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <View className="flex flex-column items-center my-5 mx-3">
-            <Text className="text-lg text-slate-800 font-bold my-5">
-              Energy Master Academy
-            </Text>
-            <View>
-              <Image style={styles.sliderImage} source={item.imageUrl} />
+    <ScrollView>
+      <View className="flex-1">
+        <FlatList
+          ref={flatListRef}
+          data={data}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          // onScroll={handleScroll}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <View className="flex flex-column items-center my-5 mx-3">
+              <Text className="text-lg text-slate-800 font-bold my-5">
+                Energy Master Academy
+              </Text>
+              <View>
+                <Image style={styles.sliderImage} source={item.imageUrl} />
+              </View>
+
+              <View className="h-[0.6px] w-full bg-slate-800 my-6"></View>
+              <Text className="text-md text-slate-800 mt-2 font-semibold">
+                {item.title}
+              </Text>
+              <EnergyCard title={item.video} />
             </View>
+          )}
+        />
 
-            <View className="h-[0.6px] w-full bg-slate-800 my-6"></View>
-            <Text className="text-md text-slate-800 mt-2 font-semibold">
-              {item.title}
-            </Text>
-            <EnergyCard title={item.video} />
-          </View>
-        )}
-      />
-
-      {/* Back Button */}
-      <CustomButton
-        title="Continue"
-        containerStyles="mx-5 my-10"
-        textStyles="text-white"
-        handlePress={() => router.push("/(tabs)/Home")}
-      />
-    </View>
+        {/* Back Button */}
+        <CustomButton
+          title="Continue"
+          containerStyles="mx-5 mt-5 mb-3"
+          textStyles="text-white"
+          handlePress={() => router.push("/(tabs)/Home")}
+        />
+      </View>
+    </ScrollView>
   );
 };
 
