@@ -4,12 +4,7 @@ import ScreenWrapper from "@/src/components/ScreenWrapper";
 import BackButton from "@/src/components/BackButton";
 import { Ionicons } from "@expo/vector-icons";
 
-const questions = [
-  "Hovac System",
-  "Cold Room",
-  "Compressor"
-  "How can you reduce your energy usage?",
-];
+const questions = ["Hovac System", "Cold Room", "Compressor", "How "];
 
 const AnalyticsQuestions = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -18,7 +13,7 @@ const AnalyticsQuestions = () => {
     <ScreenWrapper>
       <View>
         <BackButton />
-        <View className="flex flex-column mt-5 p-3">
+        <View className="flex flex-column mt-5 p-5">
           <Text style={styles.title}>Select a Tool To Get Started</Text>
           <Text style={styles.subtitle}>
             Here are some questions to help you understand your energy usage and
