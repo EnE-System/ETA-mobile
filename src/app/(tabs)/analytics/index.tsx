@@ -31,12 +31,14 @@ const Analytics = () => {
           className="w-full h-[200px] mt-20 rounded-lg"
         />
         {/* Buttton section */}
-        <CustomButton
-          handlePress={handleNavigation}
-          containerStyles="mt-20"
-          textStyles="text-white"
-          title="Begin Audit"
-        />
+        <View>
+          <CustomButton
+            handlePress={handleNavigation}
+            containerStyles="mt-20"
+            textStyles="text-white"
+            title="Begin Audit"
+          />
+        </View>
       </View>
     </ScreenWrapper>
   );

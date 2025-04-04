@@ -18,7 +18,7 @@ const AuditQuickActions = () => {
     {
       id: "1",
       status: "New Audits",
-      icon: "newspaper-o",
+      icon: "kickstarter",
       color: "#34C759",
     },
     {
