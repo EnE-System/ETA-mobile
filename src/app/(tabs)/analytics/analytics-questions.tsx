@@ -4,7 +4,7 @@ import ScreenWrapper from "@/src/components/ScreenWrapper";
 import BackButton from "@/src/components/BackButton";
 import { Ionicons } from "@expo/vector-icons";
 
-const questions = ["Hovac System", "Cold Room", "Compressor", "How "];
+const questions = ["Hovac System", "Cold Room", "Compressor", "Steamer "];
 
 const AnalyticsQuestions = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
