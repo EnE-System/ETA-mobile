@@ -12,7 +12,7 @@ const CustomButton = ({
       style={{ backgroundColor: "#A5A328" }}
       onPress={handlePress}
       activeOpacity={0.7}
-      className={` rounded-3xl min-h-[50px] flex flex-row justify-center items-center ${containerStyles} ${
+      className={` rounded-3xl  flex flex-row justify-center items-center py-2  ${containerStyles} ${
         isLoading ? "opacity-50" : ""
       }`}
       disabled={isLoading}

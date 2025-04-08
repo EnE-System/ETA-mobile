@@ -7,6 +7,8 @@ const AnalyticsRoot = () => {
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="index" />
       <Stack.Screen name="analytics-questions" />
+      <Stack.Screen name="compressor-landing" />
+      <Stack.Screen name="compressor" />
     </Stack>
   );
 };

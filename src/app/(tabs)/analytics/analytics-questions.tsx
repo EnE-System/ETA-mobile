@@ -22,6 +22,17 @@ const AnalyticsQuestions = () => {
     router.back();
   };
 
+  // NAVIGATE SCREENS BASED ON QUESTIONS INDEX
+  const handleSectionNav = (index: number) => {
+    if (index === 0) {
+      return;
+    } else if (index === 1) {
+      return;
+    } else if (index === 2) {
+      router.push("/analytics/compressor-landing");
+    }
+  };
+
   return (
     <ScreenWrapper>
       <View className="flex flex-column justify-between gap-20">
@@ -58,6 +69,7 @@ const AnalyticsQuestions = () => {
             title="Continue"
             containerStyles=" mb-3 px-10"
             textStyles="text-white"
+            handlePress={() => handleSectionNav(activeIndex ?? 0)}
           />
         </View>
       </View>
